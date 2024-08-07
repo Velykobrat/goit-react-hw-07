@@ -17,8 +17,8 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Contact Book</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Contact Book</h1>
       {loading && <p>Loading...</p>}
       {error && <p className={styles.error}>Error: {error}</p>}
       <SearchBox />
