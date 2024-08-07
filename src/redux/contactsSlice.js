@@ -1,5 +1,7 @@
+// contactsSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './contactsOps';
+import { createSelector } from 'reselect';
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -49,5 +51,20 @@ const contactsSlice = createSlice({
       });
   },
 });
+
+// Вибірка контактів і фільтра
+const selectContacts = (state) => state.contacts.items;
+const selectFilter = (state) => state.filters.nameFilter;
+
+// Мемоізований селектор для відфільтрованих контактів
+export const selectFilteredContacts = createSelector(
+  [selectContacts, selectFilter],
+  (contacts, filter) => {
+    if (!filter) return contacts;
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  }
+);
 
 export default contactsSlice.reducer;
