@@ -1,11 +1,16 @@
-.app {
-  text-align: center;
-  margin: 20px;
-
+.container {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 
-h1 {
+.title {
   font-size: 2rem;
+  margin-bottom: 20px;
   color: #333;
+}
+
+.error {
+  color: red;
 }
