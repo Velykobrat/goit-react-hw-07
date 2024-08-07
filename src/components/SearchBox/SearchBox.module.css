@@ -1,17 +1,15 @@
 .searchBox {
     margin-bottom: 20px;
-
-    padding: 20px;
 }
 
-label {
-    font-size: 1rem;
-    color: #555;
+.searchBox label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
 }
 
-input {
-    margin-left: 10px;
+.searchBox input {
     padding: 8px;
-    font-size: 1rem;
-    width: 200px;
+    font-size: 16px;
+    margin-top: 5px;
 }
