@@ -21,8 +21,8 @@ const App = () => {
       <h1 className={styles.title}>Contact Book</h1>
       {loading && <p>Loading...</p>}
       {error && <p className={styles.error}>Error: {error}</p>}
-      <SearchBox />
       <ContactForm />
+      <SearchBox />
       <ContactList />
     </div>
   );
